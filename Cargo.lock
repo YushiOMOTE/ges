@@ -102,6 +102,7 @@ checksum = "3197e20c7edb283f87c071ddfc7a2cca8f8e0b888c242959846a6fce03c72223"
 name = "nes"
 version = "0.1.0"
 dependencies = [
+ "nes-codegen-derive",
  "regex",
 ]
 
@@ -120,8 +121,11 @@ name = "nes-codegen-derive"
 version = "0.1.0"
 dependencies = [
  "nes-codegen",
+ "proc-macro2",
+ "quote",
  "serde",
  "serde_yaml",
+ "syn",
 ]
 
 [[package]]

@@ -1,0 +1,2107 @@
+---
+- name: ADC
+  desc: Add Memory to Accumulator with Carry
+  mnem: "ADC #oper"
+  opcode: 105
+  addr: Imm
+  len: 2
+  cycles: 2
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - +
+- name: ADC
+  desc: Add Memory to Accumulator with Carry
+  mnem: ADC oper
+  opcode: 101
+  addr: Zero
+  len: 2
+  cycles: 3
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - +
+- name: ADC
+  desc: Add Memory to Accumulator with Carry
+  mnem: "ADC oper,X"
+  opcode: 117
+  addr: ZeroX
+  len: 2
+  cycles: 4
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - +
+- name: ADC
+  desc: Add Memory to Accumulator with Carry
+  mnem: ADC oper
+  opcode: 109
+  addr: Abs
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - +
+- name: ADC
+  desc: Add Memory to Accumulator with Carry
+  mnem: "ADC oper,X"
+  opcode: 125
+  addr: AbsX
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - +
+- name: ADC
+  desc: Add Memory to Accumulator with Carry
+  mnem: "ADC oper,Y"
+  opcode: 121
+  addr: AbsY
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - +
+- name: ADC
+  desc: Add Memory to Accumulator with Carry
+  mnem: "ADC (oper,X)"
+  opcode: 97
+  addr: IndX
+  len: 2
+  cycles: 6
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - +
+- name: ADC
+  desc: Add Memory to Accumulator with Carry
+  mnem: "ADC (oper),Y"
+  opcode: 113
+  addr: IndY
+  len: 2
+  cycles: 5
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - +
+- name: AND
+  desc: AND Memory with Accumulator
+  mnem: "AND #oper"
+  opcode: 41
+  addr: Imm
+  len: 2
+  cycles: 2
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: AND
+  desc: AND Memory with Accumulator
+  mnem: AND oper
+  opcode: 37
+  addr: Zero
+  len: 2
+  cycles: 3
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: AND
+  desc: AND Memory with Accumulator
+  mnem: "AND oper,X"
+  opcode: 53
+  addr: ZeroX
+  len: 2
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: AND
+  desc: AND Memory with Accumulator
+  mnem: AND oper
+  opcode: 45
+  addr: Abs
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: AND
+  desc: AND Memory with Accumulator
+  mnem: "AND oper,X"
+  opcode: 61
+  addr: AbsX
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: AND
+  desc: AND Memory with Accumulator
+  mnem: "AND oper,Y"
+  opcode: 57
+  addr: AbsY
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: AND
+  desc: AND Memory with Accumulator
+  mnem: "AND (oper,X)"
+  opcode: 33
+  addr: IndX
+  len: 2
+  cycles: 6
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: AND
+  desc: AND Memory with Accumulator
+  mnem: "AND (oper),Y"
+  opcode: 49
+  addr: IndY
+  len: 2
+  cycles: 5
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: ASL
+  desc: Shift Left One Bit (Memory or Accumulator)
+  mnem: ASL A
+  opcode: 10
+  addr: Acc
+  len: 1
+  cycles: 2
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: ASL
+  desc: Shift Left One Bit (Memory or Accumulator)
+  mnem: ASL oper
+  opcode: 6
+  addr: Zero
+  len: 2
+  cycles: 5
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: ASL
+  desc: Shift Left One Bit (Memory or Accumulator)
+  mnem: "ASL oper,X"
+  opcode: 22
+  addr: ZeroX
+  len: 2
+  cycles: 6
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: ASL
+  desc: Shift Left One Bit (Memory or Accumulator)
+  mnem: ASL oper
+  opcode: 14
+  addr: Abs
+  len: 3
+  cycles: 6
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: ASL
+  desc: Shift Left One Bit (Memory or Accumulator)
+  mnem: "ASL oper,X"
+  opcode: 30
+  addr: AbsX
+  len: 3
+  cycles: 7
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: BCC
+  desc: Branch on Carry Clear
+  mnem: BCC oper
+  opcode: 144
+  addr: Rel
+  len: 2
+  cycles: 2
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: BCS
+  desc: Branch on Carry Set
+  mnem: BCS oper
+  opcode: 176
+  addr: Rel
+  len: 2
+  cycles: 2
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: BEQ
+  desc: Branch on Result Zero
+  mnem: BEQ oper
+  opcode: 240
+  addr: Rel
+  len: 2
+  cycles: 2
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: BIT
+  desc: Test Bits in Memory with Accumulator
+  mnem: BIT oper
+  opcode: 36
+  addr: Zero
+  len: 2
+  cycles: 3
+  state:
+    - M7
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - M6
+- name: BIT
+  desc: Test Bits in Memory with Accumulator
+  mnem: BIT oper
+  opcode: 44
+  addr: Abs
+  len: 3
+  cycles: 4
+  state:
+    - M7
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - M6
+- name: BMI
+  desc: Branch on Result Minus
+  mnem: BMI oper
+  opcode: 48
+  addr: Rel
+  len: 2
+  cycles: 2
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: BNE
+  desc: Branch on Result not Zero
+  mnem: BNE oper
+  opcode: 208
+  addr: Rel
+  len: 2
+  cycles: 2
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: BPL
+  desc: Branch on Result Plus
+  mnem: BPL oper
+  opcode: 16
+  addr: Rel
+  len: 2
+  cycles: 2
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: BRK
+  desc: Force Break
+  mnem: BRK
+  opcode: 0
+  addr: Imp
+  len: 1
+  cycles: 7
+  state:
+    - push
+    - "PC+2,"
+    - push
+    - SR
+    - ""
+    - "             - - - 1 - -"
+- name: BVC
+  desc: Branch on Overflow Clear
+  mnem: BVC oper
+  opcode: 80
+  addr: Rel
+  len: 2
+  cycles: 2
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: BVS
+  desc: Branch on Overflow Set
+  mnem: BVC oper
+  opcode: 112
+  addr: Rel
+  len: 2
+  cycles: 2
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: CLC
+  desc: Clear Carry Flag
+  mnem: CLC
+  opcode: 24
+  addr: Imp
+  len: 1
+  cycles: 2
+  state:
+    - "-"
+    - "-"
+    - "0"
+    - "-"
+    - "-"
+    - "-"
+- name: CLD
+  desc: Clear Decimal Mode
+  mnem: CLD
+  opcode: 216
+  addr: Imp
+  len: 1
+  cycles: 2
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "0"
+    - "-"
+- name: CLI
+  desc: Clear Interrupt Disable Bit
+  mnem: CLI
+  opcode: 88
+  addr: Imp
+  len: 1
+  cycles: 2
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "0"
+    - "-"
+    - "-"
+- name: CLV
+  desc: Clear Overflow Flag
+  mnem: CLV
+  opcode: 184
+  addr: Imp
+  len: 1
+  cycles: 2
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "0"
+- name: CMP
+  desc: Compare Memory with Accumulator
+  mnem: "CMP #oper"
+  opcode: 201
+  addr: Imm
+  len: 2
+  cycles: 2
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: CMP
+  desc: Compare Memory with Accumulator
+  mnem: CMP oper
+  opcode: 197
+  addr: Zero
+  len: 2
+  cycles: 3
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: CMP
+  desc: Compare Memory with Accumulator
+  mnem: "CMP oper,X"
+  opcode: 213
+  addr: ZeroX
+  len: 2
+  cycles: 4
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: CMP
+  desc: Compare Memory with Accumulator
+  mnem: CMP oper
+  opcode: 205
+  addr: Abs
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: CMP
+  desc: Compare Memory with Accumulator
+  mnem: "CMP oper,X"
+  opcode: 221
+  addr: AbsX
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: CMP
+  desc: Compare Memory with Accumulator
+  mnem: "CMP oper,Y"
+  opcode: 217
+  addr: AbsY
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: CMP
+  desc: Compare Memory with Accumulator
+  mnem: "CMP (oper,X)"
+  opcode: 193
+  addr: IndX
+  len: 2
+  cycles: 6
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: CMP
+  desc: Compare Memory with Accumulator
+  mnem: "CMP (oper),Y"
+  opcode: 209
+  addr: IndY
+  len: 2
+  cycles: 5
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: CPX
+  desc: Compare Memory and Index X
+  mnem: "CPX #oper"
+  opcode: 224
+  addr: Imm
+  len: 2
+  cycles: 2
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: CPX
+  desc: Compare Memory and Index X
+  mnem: CPX oper
+  opcode: 228
+  addr: Zero
+  len: 2
+  cycles: 3
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: CPX
+  desc: Compare Memory and Index X
+  mnem: CPX oper
+  opcode: 236
+  addr: Abs
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: CPY
+  desc: Compare Memory and Index Y
+  mnem: "CPY #oper"
+  opcode: 192
+  addr: Imm
+  len: 2
+  cycles: 2
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: CPY
+  desc: Compare Memory and Index Y
+  mnem: CPY oper
+  opcode: 196
+  addr: Zero
+  len: 2
+  cycles: 3
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: CPY
+  desc: Compare Memory and Index Y
+  mnem: CPY oper
+  opcode: 204
+  addr: Abs
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: DEC
+  desc: Decrement Memory by One
+  mnem: DEC oper
+  opcode: 198
+  addr: Zero
+  len: 2
+  cycles: 5
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: DEC
+  desc: Decrement Memory by One
+  mnem: "DEC oper,X"
+  opcode: 214
+  addr: ZeroX
+  len: 2
+  cycles: 6
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: DEC
+  desc: Decrement Memory by One
+  mnem: DEC oper
+  opcode: 206
+  addr: Abs
+  len: 3
+  cycles: 6
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: DEC
+  desc: Decrement Memory by One
+  mnem: "DEC oper,X"
+  opcode: 222
+  addr: AbsX
+  len: 3
+  cycles: 7
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: DEX
+  desc: Decrement Index X by One
+  mnem: DEC
+  opcode: 202
+  addr: Imp
+  len: 1
+  cycles: 2
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: DEY
+  desc: Decrement Index Y by One
+  mnem: DEC
+  opcode: 136
+  addr: Imp
+  len: 1
+  cycles: 2
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: EOR
+  desc: Exclusive-OR Memory with Accumulator
+  mnem: "EOR #oper"
+  opcode: 73
+  addr: Imm
+  len: 2
+  cycles: 2
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: EOR
+  desc: Exclusive-OR Memory with Accumulator
+  mnem: EOR oper
+  opcode: 69
+  addr: Zero
+  len: 2
+  cycles: 3
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: EOR
+  desc: Exclusive-OR Memory with Accumulator
+  mnem: "EOR oper,X"
+  opcode: 85
+  addr: ZeroX
+  len: 2
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: EOR
+  desc: Exclusive-OR Memory with Accumulator
+  mnem: EOR oper
+  opcode: 77
+  addr: Abs
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: EOR
+  desc: Exclusive-OR Memory with Accumulator
+  mnem: "EOR oper,X"
+  opcode: 93
+  addr: AbsX
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: EOR
+  desc: Exclusive-OR Memory with Accumulator
+  mnem: "EOR oper,Y"
+  opcode: 89
+  addr: AbsY
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: EOR
+  desc: Exclusive-OR Memory with Accumulator
+  mnem: "EOR (oper,X)"
+  opcode: 65
+  addr: IndX
+  len: 2
+  cycles: 6
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: EOR
+  desc: Exclusive-OR Memory with Accumulator
+  mnem: "EOR (oper),Y"
+  opcode: 81
+  addr: IndY
+  len: 2
+  cycles: 5
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: INC
+  desc: Increment Memory by One
+  mnem: INC oper
+  opcode: 230
+  addr: Zero
+  len: 2
+  cycles: 5
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: INC
+  desc: Increment Memory by One
+  mnem: "INC oper,X"
+  opcode: 246
+  addr: ZeroX
+  len: 2
+  cycles: 6
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: INC
+  desc: Increment Memory by One
+  mnem: INC oper
+  opcode: 238
+  addr: Abs
+  len: 3
+  cycles: 6
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: INC
+  desc: Increment Memory by One
+  mnem: "INC oper,X"
+  opcode: 254
+  addr: AbsX
+  len: 3
+  cycles: 7
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: INX
+  desc: Increment Index X by One
+  mnem: INX
+  opcode: 232
+  addr: Imp
+  len: 1
+  cycles: 2
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: INY
+  desc: Increment Index Y by One
+  mnem: INY
+  opcode: 200
+  addr: Imp
+  len: 1
+  cycles: 2
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: JMP
+  desc: Jump to New Location
+  mnem: JMP oper
+  opcode: 76
+  addr: Abs
+  len: 3
+  cycles: 3
+  state:
+    - (PC+2)
+    - "->"
+    - PCH
+    - ""
+    - ""
+    - "                 - - - - - -"
+- name: JMP
+  desc: Jump to New Location
+  mnem: JMP (oper)
+  opcode: 108
+  addr: Ind
+  len: 3
+  cycles: 5
+  state:
+    - (PC+2)
+    - "->"
+    - PCH
+    - ""
+    - ""
+    - "                 - - - - - -"
+- name: JSR
+  desc: Jump to New Location Saving Return Address
+  mnem: JSR oper
+  opcode: 32
+  addr: Abs
+  len: 3
+  cycles: 6
+  state:
+    - (PC+1)
+    - "->"
+    - PCL
+    - ""
+    - ""
+    - "                 - - - - - -"
+- name: LDA
+  desc: Load Accumulator with Memory
+  mnem: "LDA #oper"
+  opcode: 169
+  addr: Imm
+  len: 2
+  cycles: 2
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: LDA
+  desc: Load Accumulator with Memory
+  mnem: LDA oper
+  opcode: 165
+  addr: Zero
+  len: 2
+  cycles: 3
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: LDA
+  desc: Load Accumulator with Memory
+  mnem: "LDA oper,X"
+  opcode: 181
+  addr: ZeroX
+  len: 2
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: LDA
+  desc: Load Accumulator with Memory
+  mnem: LDA oper
+  opcode: 173
+  addr: Abs
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: LDA
+  desc: Load Accumulator with Memory
+  mnem: "LDA oper,X"
+  opcode: 189
+  addr: AbsX
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: LDA
+  desc: Load Accumulator with Memory
+  mnem: "LDA oper,Y"
+  opcode: 185
+  addr: AbsY
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: LDA
+  desc: Load Accumulator with Memory
+  mnem: "LDA (oper,X)"
+  opcode: 161
+  addr: IndX
+  len: 2
+  cycles: 6
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: LDA
+  desc: Load Accumulator with Memory
+  mnem: "LDA (oper),Y"
+  opcode: 177
+  addr: IndY
+  len: 2
+  cycles: 5
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: LDX
+  desc: Load Index X with Memory
+  mnem: "LDX #oper"
+  opcode: 162
+  addr: Imm
+  len: 2
+  cycles: 2
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: LDX
+  desc: Load Index X with Memory
+  mnem: LDX oper
+  opcode: 166
+  addr: Zero
+  len: 2
+  cycles: 3
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: LDX
+  desc: Load Index X with Memory
+  mnem: "LDX oper,Y"
+  opcode: 182
+  addr: ZeroY
+  len: 2
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: LDX
+  desc: Load Index X with Memory
+  mnem: LDX oper
+  opcode: 174
+  addr: Abs
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: LDX
+  desc: Load Index X with Memory
+  mnem: "LDX oper,Y"
+  opcode: 190
+  addr: AbsY
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: LDY
+  desc: Load Index Y with Memory
+  mnem: "LDY #oper"
+  opcode: 160
+  addr: Imm
+  len: 2
+  cycles: 2
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: LDY
+  desc: Load Index Y with Memory
+  mnem: LDY oper
+  opcode: 164
+  addr: Zero
+  len: 2
+  cycles: 3
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: LDY
+  desc: Load Index Y with Memory
+  mnem: "LDY oper,X"
+  opcode: 180
+  addr: ZeroX
+  len: 2
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: LDY
+  desc: Load Index Y with Memory
+  mnem: LDY oper
+  opcode: 172
+  addr: Abs
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: LDY
+  desc: Load Index Y with Memory
+  mnem: "LDY oper,X"
+  opcode: 188
+  addr: AbsX
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: LSR
+  desc: Shift One Bit Right (Memory or Accumulator)
+  mnem: LSR A
+  opcode: 74
+  addr: Acc
+  len: 1
+  cycles: 2
+  state:
+    - "0"
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: LSR
+  desc: Shift One Bit Right (Memory or Accumulator)
+  mnem: LSR oper
+  opcode: 70
+  addr: Zero
+  len: 2
+  cycles: 5
+  state:
+    - "0"
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: LSR
+  desc: Shift One Bit Right (Memory or Accumulator)
+  mnem: "LSR oper,X"
+  opcode: 86
+  addr: ZeroX
+  len: 2
+  cycles: 6
+  state:
+    - "0"
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: LSR
+  desc: Shift One Bit Right (Memory or Accumulator)
+  mnem: LSR oper
+  opcode: 78
+  addr: Abs
+  len: 3
+  cycles: 6
+  state:
+    - "0"
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: LSR
+  desc: Shift One Bit Right (Memory or Accumulator)
+  mnem: "LSR oper,X"
+  opcode: 94
+  addr: AbsX
+  len: 3
+  cycles: 7
+  state:
+    - "0"
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: NOP
+  desc: No Operation
+  mnem: NOP
+  opcode: 234
+  addr: Imp
+  len: 1
+  cycles: 2
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: ORA
+  desc: OR Memory with Accumulator
+  mnem: "ORA #oper"
+  opcode: 9
+  addr: Imm
+  len: 2
+  cycles: 2
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: ORA
+  desc: OR Memory with Accumulator
+  mnem: ORA oper
+  opcode: 5
+  addr: Zero
+  len: 2
+  cycles: 3
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: ORA
+  desc: OR Memory with Accumulator
+  mnem: "ORA oper,X"
+  opcode: 21
+  addr: ZeroX
+  len: 2
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: ORA
+  desc: OR Memory with Accumulator
+  mnem: ORA oper
+  opcode: 13
+  addr: Abs
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: ORA
+  desc: OR Memory with Accumulator
+  mnem: "ORA oper,X"
+  opcode: 29
+  addr: AbsX
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: ORA
+  desc: OR Memory with Accumulator
+  mnem: "ORA oper,Y"
+  opcode: 25
+  addr: AbsY
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: ORA
+  desc: OR Memory with Accumulator
+  mnem: "ORA (oper,X)"
+  opcode: 1
+  addr: IndX
+  len: 2
+  cycles: 6
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: ORA
+  desc: OR Memory with Accumulator
+  mnem: "ORA (oper),Y"
+  opcode: 17
+  addr: IndY
+  len: 2
+  cycles: 5
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: PHA
+  desc: Push Accumulator on Stack
+  mnem: PHA
+  opcode: 72
+  addr: Imp
+  len: 1
+  cycles: 3
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: PHP
+  desc: Push Processor Status on Stack
+  mnem: PHP
+  opcode: 8
+  addr: Imp
+  len: 1
+  cycles: 3
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: PLA
+  desc: Pull Accumulator from Stack
+  mnem: PLA
+  opcode: 104
+  addr: Imp
+  len: 1
+  cycles: 4
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: PLP
+  desc: Pull Processor Status from Stack
+  mnem: PLP
+  opcode: 40
+  addr: Imp
+  len: 1
+  cycles: 4
+  state:
+    - from
+    - stack
+- name: ROL
+  desc: Rotate One Bit Left (Memory or Accumulator)
+  mnem: ROL A
+  opcode: 42
+  addr: Acc
+  len: 1
+  cycles: 2
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: ROL
+  desc: Rotate One Bit Left (Memory or Accumulator)
+  mnem: ROL oper
+  opcode: 38
+  addr: Zero
+  len: 2
+  cycles: 5
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: ROL
+  desc: Rotate One Bit Left (Memory or Accumulator)
+  mnem: "ROL oper,X"
+  opcode: 54
+  addr: ZeroX
+  len: 2
+  cycles: 6
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: ROL
+  desc: Rotate One Bit Left (Memory or Accumulator)
+  mnem: ROL oper
+  opcode: 46
+  addr: Abs
+  len: 3
+  cycles: 6
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: ROL
+  desc: Rotate One Bit Left (Memory or Accumulator)
+  mnem: "ROL oper,X"
+  opcode: 62
+  addr: AbsX
+  len: 3
+  cycles: 7
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: ROR
+  desc: Rotate One Bit Right (Memory or Accumulator)
+  mnem: ROR A
+  opcode: 106
+  addr: Acc
+  len: 1
+  cycles: 2
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: ROR
+  desc: Rotate One Bit Right (Memory or Accumulator)
+  mnem: ROR oper
+  opcode: 102
+  addr: Zero
+  len: 2
+  cycles: 5
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: ROR
+  desc: Rotate One Bit Right (Memory or Accumulator)
+  mnem: "ROR oper,X"
+  opcode: 118
+  addr: ZeroX
+  len: 2
+  cycles: 6
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: ROR
+  desc: Rotate One Bit Right (Memory or Accumulator)
+  mnem: ROR oper
+  opcode: 110
+  addr: Abs
+  len: 3
+  cycles: 6
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: ROR
+  desc: Rotate One Bit Right (Memory or Accumulator)
+  mnem: "ROR oper,X"
+  opcode: 126
+  addr: AbsX
+  len: 3
+  cycles: 7
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+- name: RTI
+  desc: Return from Interrupt
+  mnem: RTI
+  opcode: 64
+  addr: Imp
+  len: 1
+  cycles: 6
+  state:
+    - from
+    - stack
+- name: RTS
+  desc: Return from Subroutine
+  mnem: RTS
+  opcode: 96
+  addr: Imp
+  len: 1
+  cycles: 6
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: SBC
+  desc: Subtract Memory from Accumulator with Borrow
+  mnem: "SBC #oper"
+  opcode: 233
+  addr: Imm
+  len: 2
+  cycles: 2
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - +
+- name: SBC
+  desc: Subtract Memory from Accumulator with Borrow
+  mnem: SBC oper
+  opcode: 229
+  addr: Zero
+  len: 2
+  cycles: 3
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - +
+- name: SBC
+  desc: Subtract Memory from Accumulator with Borrow
+  mnem: "SBC oper,X"
+  opcode: 245
+  addr: ZeroX
+  len: 2
+  cycles: 4
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - +
+- name: SBC
+  desc: Subtract Memory from Accumulator with Borrow
+  mnem: SBC oper
+  opcode: 237
+  addr: Abs
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - +
+- name: SBC
+  desc: Subtract Memory from Accumulator with Borrow
+  mnem: "SBC oper,X"
+  opcode: 253
+  addr: AbsX
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - +
+- name: SBC
+  desc: Subtract Memory from Accumulator with Borrow
+  mnem: "SBC oper,Y"
+  opcode: 249
+  addr: AbsY
+  len: 3
+  cycles: 4
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - +
+- name: SBC
+  desc: Subtract Memory from Accumulator with Borrow
+  mnem: "SBC (oper,X)"
+  opcode: 225
+  addr: IndX
+  len: 2
+  cycles: 6
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - +
+- name: SBC
+  desc: Subtract Memory from Accumulator with Borrow
+  mnem: "SBC (oper),Y"
+  opcode: 241
+  addr: IndY
+  len: 2
+  cycles: 5
+  state:
+    - +
+    - +
+    - +
+    - "-"
+    - "-"
+    - +
+- name: SEC
+  desc: Set Carry Flag
+  mnem: SEC
+  opcode: 56
+  addr: Imp
+  len: 1
+  cycles: 2
+  state:
+    - "-"
+    - "-"
+    - "1"
+    - "-"
+    - "-"
+    - "-"
+- name: SED
+  desc: Set Decimal Flag
+  mnem: SED
+  opcode: 248
+  addr: Imp
+  len: 1
+  cycles: 2
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "1"
+    - "-"
+- name: SEI
+  desc: Set Interrupt Disable Status
+  mnem: SEI
+  opcode: 120
+  addr: Imp
+  len: 1
+  cycles: 2
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "1"
+    - "-"
+    - "-"
+- name: STA
+  desc: Store Accumulator in Memory
+  mnem: STA oper
+  opcode: 133
+  addr: Zero
+  len: 2
+  cycles: 3
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: STA
+  desc: Store Accumulator in Memory
+  mnem: "STA oper,X"
+  opcode: 149
+  addr: ZeroX
+  len: 2
+  cycles: 4
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: STA
+  desc: Store Accumulator in Memory
+  mnem: STA oper
+  opcode: 141
+  addr: Abs
+  len: 3
+  cycles: 4
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: STA
+  desc: Store Accumulator in Memory
+  mnem: "STA oper,X"
+  opcode: 157
+  addr: AbsX
+  len: 3
+  cycles: 5
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: STA
+  desc: Store Accumulator in Memory
+  mnem: "STA oper,Y"
+  opcode: 153
+  addr: AbsY
+  len: 3
+  cycles: 5
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: STA
+  desc: Store Accumulator in Memory
+  mnem: "STA (oper,X)"
+  opcode: 129
+  addr: IndX
+  len: 2
+  cycles: 6
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: STA
+  desc: Store Accumulator in Memory
+  mnem: "STA (oper),Y"
+  opcode: 145
+  addr: IndY
+  len: 2
+  cycles: 6
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: STX
+  desc: Store Index X in Memory
+  mnem: STX oper
+  opcode: 134
+  addr: Zero
+  len: 2
+  cycles: 3
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: STX
+  desc: Store Index X in Memory
+  mnem: "STX oper,Y"
+  opcode: 150
+  addr: ZeroY
+  len: 2
+  cycles: 4
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: STX
+  desc: Store Index X in Memory
+  mnem: STX oper
+  opcode: 142
+  addr: Abs
+  len: 3
+  cycles: 4
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: STY
+  desc: Sore Index Y in Memory
+  mnem: STY oper
+  opcode: 132
+  addr: Zero
+  len: 2
+  cycles: 3
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: STY
+  desc: Sore Index Y in Memory
+  mnem: "STY oper,X"
+  opcode: 148
+  addr: ZeroX
+  len: 2
+  cycles: 4
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: STY
+  desc: Sore Index Y in Memory
+  mnem: STY oper
+  opcode: 140
+  addr: Abs
+  len: 3
+  cycles: 4
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: TAX
+  desc: Transfer Accumulator to Index X
+  mnem: TAX
+  opcode: 170
+  addr: Imp
+  len: 1
+  cycles: 2
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: TAY
+  desc: Transfer Accumulator to Index Y
+  mnem: TAY
+  opcode: 168
+  addr: Imp
+  len: 1
+  cycles: 2
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: TSX
+  desc: Transfer Stack Pointer to Index X
+  mnem: TSX
+  opcode: 186
+  addr: Imp
+  len: 1
+  cycles: 2
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: TXA
+  desc: Transfer Index X to Accumulator
+  mnem: TXA
+  opcode: 138
+  addr: Imp
+  len: 1
+  cycles: 2
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: TXS
+  desc: Transfer Index X to Stack Register
+  mnem: TXS
+  opcode: 154
+  addr: Imp
+  len: 1
+  cycles: 2
+  state:
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+    - "-"
+- name: TYA
+  desc: Transfer Index Y to Accumulator
+  mnem: TYA
+  opcode: 152
+  addr: Imp
+  len: 1
+  cycles: 2
+  state:
+    - +
+    - +
+    - "-"
+    - "-"
+    - "-"
+    - "-"
