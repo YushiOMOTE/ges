@@ -1,0 +1,13 @@
+[package]
+name = "nes-codegen-derive"
+version = "0.1.0"
+authors = ["Yushi OMOTE <yushiomote@gmail.com>"]
+edition = "2018"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+nes-codegen = { path = "../codegen" }
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.8"
