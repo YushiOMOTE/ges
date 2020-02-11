@@ -1,4 +1,4 @@
-use nes::{run, Mmu, Reg, Rom};
+use ges::{run, Mmu, Reg, Rom};
 
 fn main() {
     env_logger::init();

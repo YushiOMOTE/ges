@@ -1,6 +1,6 @@
 extern crate proc_macro;
 
-use nes_codegen::{Addr, Inst};
+use ges_codegen::{Addr, Inst};
 use proc_macro::TokenStream as TokenStream1;
 use proc_macro2::{Span, TokenStream};
 use quote::quote;

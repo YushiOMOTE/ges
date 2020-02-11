@@ -76,6 +76,38 @@ dependencies = [
 ]
 
 [[package]]
+name = "ges"
+version = "0.1.0"
+dependencies = [
+ "env_logger",
+ "ges-codegen-derive",
+ "log",
+ "regex",
+]
+
+[[package]]
+name = "ges-codegen"
+version = "0.1.0"
+dependencies = [
+ "regex",
+ "serde",
+ "serde_yaml",
+ "structopt",
+]
+
+[[package]]
+name = "ges-codegen-derive"
+version = "0.1.0"
+dependencies = [
+ "ges-codegen",
+ "proc-macro2",
+ "quote",
+ "serde",
+ "serde_yaml",
+ "syn",
+]
+
+[[package]]
 name = "heck"
 version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -134,38 +166,6 @@ name = "memchr"
 version = "2.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3197e20c7edb283f87c071ddfc7a2cca8f8e0b888c242959846a6fce03c72223"
-
-[[package]]
-name = "nes"
-version = "0.1.0"
-dependencies = [
- "env_logger",
- "log",
- "nes-codegen-derive",
- "regex",
-]
-
-[[package]]
-name = "nes-codegen"
-version = "0.1.0"
-dependencies = [
- "regex",
- "serde",
- "serde_yaml",
- "structopt",
-]
-
-[[package]]
-name = "nes-codegen-derive"
-version = "0.1.0"
-dependencies = [
- "nes-codegen",
- "proc-macro2",
- "quote",
- "serde",
- "serde_yaml",
- "syn",
-]
 
 [[package]]
 name = "proc-macro-error"

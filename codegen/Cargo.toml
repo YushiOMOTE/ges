@@ -1,5 +1,5 @@
 [package]
-name = "nes-codegen"
+name = "ges-codegen"
 version = "0.1.0"
 authors = ["Yushi OMOTE <yushiomote@gmail.com>"]
 edition = "2018"

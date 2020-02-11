@@ -1,4 +1,4 @@
-use nes_codegen::{Addr, Inst};
+use ges_codegen::{Addr, Inst};
 use regex::Regex;
 use std::path::PathBuf;
 use structopt::StructOpt;

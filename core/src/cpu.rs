@@ -1,5 +1,5 @@
+use ges_codegen_derive::{decode, op};
 use log::*;
-use nes_codegen_derive::{decode, op};
 
 use crate::mmu::Mmu;
 
