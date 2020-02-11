@@ -5,5 +5,9 @@ authors = ["Yushi OMOTE <yushiomote@gmail.com>"]
 edition = "2018"
 
 [dependencies]
+log = "0.4"
 regex = "1.0"
 nes-codegen-derive = { path = "../codegen-derive" }
+
+[dev-dependencies]
+env_logger = "0.7"

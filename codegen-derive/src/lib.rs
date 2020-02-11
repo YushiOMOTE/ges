@@ -28,7 +28,9 @@ fn init(inst: &Inst) -> TokenStream {
         Addr::Acc => quote! {
             let mut mem = RegRef::new(&mut reg.a);
         },
-        Addr::Imp => quote! {},
+        Addr::Imp => quote! {
+            let mem = Imp::new();
+        },
         Addr::Imm | Addr::Rel => quote! {
             let mut mem = Imm::new(mmu.get(reg.pc + 1));
         },
@@ -104,6 +106,15 @@ fn init(inst: &Inst) -> TokenStream {
     }
 }
 
+fn debug(inst: &Inst) -> TokenStream {
+    let mnem = &inst.mnem;
+    let opcode = inst.opcode;
+
+    quote! {
+        log::trace!("[{:04x}]: {} (op={:02x}{})", reg.pc, #mnem, #opcode, mem.inspect());
+    }
+}
+
 #[proc_macro_attribute]
 pub fn op(_: TokenStream1, item: TokenStream1) -> TokenStream1 {
     let input = parse_macro_input!(item as ItemFn);
@@ -117,9 +128,11 @@ pub fn op(_: TokenStream1, item: TokenStream1) -> TokenStream1 {
         let len = inst.len as u16;
         let init = init(&inst);
         let ident = funcname(&inst);
+        let debug = debug(&inst);
         let result = quote! {
             fn #ident(reg: &mut Reg, mmu: &mut Mmu) -> usize {
                 #init
+                #debug
                 #block
                 if !ctx.jump {
                     reg.pc = reg.pc.wrapping_add(#len);

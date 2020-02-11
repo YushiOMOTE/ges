@@ -67,6 +67,10 @@ impl<'a> RegRef<'a> {
     pub fn set(&mut self, value: u8) {
         *self.reg = value;
     }
+
+    pub fn inspect(&self) -> String {
+        format!(", acc={:02x}", *self.reg)
+    }
 }
 
 pub struct Imm {
@@ -80,6 +84,22 @@ impl Imm {
 
     pub fn get(&self) -> u8 {
         self.imm
+    }
+
+    pub fn inspect(&self) -> String {
+        format!(", imm={:02x}", self.imm)
+    }
+}
+
+pub struct Imp;
+
+impl Imp {
+    pub fn new() -> Self {
+        Self
+    }
+
+    pub fn inspect(&self) -> &'static str {
+        ""
     }
 }
 
@@ -618,6 +638,15 @@ fn tya(reg: &mut Reg, mut ctx: Context, mem: Ref) {
 
 #[decode]
 pub fn execute(reg: &mut Reg, mmu: &mut Mmu) -> usize {}
+
+pub fn run(reg: &mut Reg, mmu: &mut Mmu) {
+    // Reset vector
+    reg.pc = mmu.get16(0xfffc);
+
+    loop {
+        let cycles = execute(reg, mmu);
+    }
+}
 
 #[cfg(test)]
 mod test {
