@@ -21,12 +21,12 @@ impl Mmu {
         self.rom.copy_from_slice(rom.prg());
     }
 
-    pub fn get(&self, addr: u16) -> u8 {
+    pub fn get(&mut self, addr: u16) -> u8 {
         let addr = addr as usize;
 
         let value = match addr {
             0..=0x1fff => self.ram[addr % 0x800],
-            0x2000..=0x3fff => self.ppu.get((addr - 0x2000) % 8),
+            0x2000..=0x3fff => self.ppu.get((addr - 0x2000) % 8 + 0x2000),
             0x8000..=0xffff => self.rom[(addr - 0x8000) % 0x8000],
             e => unimplemented!("Reading: {:04x}", e),
         };
@@ -45,7 +45,7 @@ impl Mmu {
             0..=0x1fff => {
                 self.ram[addr % 0x800] = value;
             }
-            0x2000..=0x3fff => self.ppu.set((addr - 0x2000) % 8, value),
+            0x2000..=0x3fff => self.ppu.set((addr - 0x2000) % 8 + 0x2000, value),
             e => unimplemented!("writing: {:04x}", e),
         }
     }
@@ -54,7 +54,7 @@ impl Mmu {
         Ref::new(self, addr)
     }
 
-    pub fn get16(&self, addr: u16) -> u16 {
+    pub fn get16(&mut self, addr: u16) -> u16 {
         let l = self.get(addr) as u16;
         let h = self.get(addr.wrapping_add(1)) as u16;
         h << 8 | l
@@ -75,7 +75,7 @@ impl<'a> Ref<'a> {
         self.addr
     }
 
-    pub fn get(&self) -> u8 {
+    pub fn get(&mut self) -> u8 {
         self.mmu.get(self.addr)
     }
 
