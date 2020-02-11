@@ -1,8 +1,11 @@
+use crate::ppu::Ppu;
 use crate::rom::Rom;
+use log::*;
 
 pub struct Mmu {
     ram: [u8; 0x800],
     rom: [u8; 0x8000],
+    ppu: Ppu,
 }
 
 impl Mmu {
@@ -10,6 +13,7 @@ impl Mmu {
         Self {
             ram: [0; 0x800],
             rom: [0; 0x8000],
+            ppu: Ppu::new(),
         }
     }
 
@@ -20,20 +24,28 @@ impl Mmu {
     pub fn get(&self, addr: u16) -> u8 {
         let addr = addr as usize;
 
-        match addr {
+        let value = match addr {
             0..=0x1fff => self.ram[addr % 0x800],
+            0x2000..=0x3fff => self.ppu.get((addr - 0x2000) % 8),
             0x8000..=0xffff => self.rom[(addr - 0x8000) % 0x8000],
-            e => unimplemented!("reading: {:04x}", e),
-        }
+            e => unimplemented!("Reading: {:04x}", e),
+        };
+
+        trace!("Read MMU: {:04x} -> {:02x}", addr, value);
+
+        value
     }
 
     pub fn set(&mut self, addr: u16, value: u8) {
+        trace!("Write MMU: {:04x} <- {:02x}", addr, value);
+
         let addr = addr as usize;
 
         match addr {
             0..=0x1fff => {
                 self.ram[addr % 0x800] = value;
             }
+            0x2000..=0x3fff => self.ppu.set((addr - 0x2000) % 8, value),
             e => unimplemented!("writing: {:04x}", e),
         }
     }
