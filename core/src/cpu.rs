@@ -1,3 +1,4 @@
+use log::*;
 use nes_codegen_derive::{decode, op};
 
 use crate::mmu::Mmu;
@@ -273,9 +274,18 @@ fn asl(reg: &mut Reg, ctx: Context, mem: Ref) {
     z!(reg, reg.a);
 }
 
-fn reljump(reg: &mut Reg, ctx: &mut Context, v: u8) {
+fn reljump(reg: &mut Reg, ctx: &mut Context, off: u8) {
     let orig = reg.pc;
-    reg.pc = ((reg.pc as i16) + (v as i16)) as u16;
+    let off = (off as i8 as i16) as u16;
+    reg.pc = reg.pc + off;
+
+    trace!(
+        "Relative jump {:04x} + {} -> {:04x}",
+        orig,
+        off as i16,
+        reg.pc
+    );
+
     ctx.wait(if orig / 0x100 != reg.pc / 0x100 { 2 } else { 1 });
 }
 
