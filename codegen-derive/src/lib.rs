@@ -151,7 +151,7 @@ pub fn decode(_: TokenStream1, item: TokenStream1) -> TokenStream1 {
     let ident = &input.sig.ident;
 
     let result = quote! {
-        fn #ident(reg: &mut Reg, mmu: &mut Mmu) -> usize {
+        pub fn #ident(reg: &mut Reg, mmu: &mut Mmu) -> usize {
             let pc = mmu.get(reg.pc);
 
             match pc {
