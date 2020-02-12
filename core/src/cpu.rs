@@ -50,6 +50,11 @@ impl Reg {
         let h = self.pop(mmu) as u16;
         h << 8 | l
     }
+
+    pub fn reset(&mut self, mmu: &mut Mmu) {
+        // Read from reset vector
+        self.pc = mmu.get16(0xfffc);
+    }
 }
 
 pub struct RegRef<'a> {
@@ -648,15 +653,6 @@ fn tya(reg: &mut Reg, mut ctx: Context, mem: Ref) {
 
 #[decode]
 pub fn execute(reg: &mut Reg, mmu: &mut Mmu) -> usize {}
-
-pub fn run(reg: &mut Reg, mmu: &mut Mmu) {
-    // Reset vector
-    reg.pc = mmu.get16(0xfffc);
-
-    loop {
-        let cycles = execute(reg, mmu);
-    }
-}
 
 #[cfg(test)]
 mod test {

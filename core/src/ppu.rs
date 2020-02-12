@@ -1,6 +1,10 @@
 use log::*;
 
 pub struct Ppu {
+    // internal counters
+    frames: usize,
+    scanline: isize,
+    cycles: usize,
     // ctrl register
     nametable: usize,
     vram_inc32: bool,
@@ -42,6 +46,9 @@ pub struct Ppu {
 impl Ppu {
     pub fn new() -> Self {
         Self {
+            frames: 0,
+            scanline: -1,
+            cycles: 0,
             nametable: 0x2000,
             vram_inc32: false,
             sptable: 0x0000,
@@ -71,6 +78,45 @@ impl Ppu {
             ppumem: [0; 0x4000],
             ppuaddr: 0,
             ppuaddrstate: false,
+        }
+    }
+
+    pub fn step(&mut self, cycles: usize) {
+        for _ in 0..(cycles * 3) {
+            self.step_inner();
+        }
+    }
+
+    fn step_inner(&mut self) {
+        // Do op
+
+        match self.scanline {
+            -1 => {}
+            0..=239 => {}
+            240 => {}
+            241..=260 => {
+                self.vblank = true;
+                // TODO: nmi interrupt
+            }
+            261 => {}
+            _ => unreachable!(),
+        }
+
+        if self.frames % 2 == 1 && self.cycles >= 339 && self.scanline >= 261 {
+            self.cycles = 0;
+            self.scanline = -1;
+            self.frames = self.frames.wrapping_add(1);
+        } else if self.cycles >= 340 {
+            self.cycles = 0;
+
+            if self.scanline >= 261 {
+                self.scanline = -1;
+                self.frames = self.frames.wrapping_add(1);
+            } else {
+                self.scanline += 1;
+            }
+        } else {
+            self.cycles += 1;
         }
     }
 

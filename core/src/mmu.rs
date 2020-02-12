@@ -21,6 +21,10 @@ impl Mmu {
         self.rom.copy_from_slice(rom.prg());
     }
 
+    pub fn step(&mut self, cycles: usize) {
+        self.ppu.step(cycles);
+    }
+
     pub fn get(&mut self, addr: u16) -> u8 {
         let addr = addr as usize;
 
